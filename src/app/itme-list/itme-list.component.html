@@ -1,1 +1,25 @@
 <p>itme-list works!</p>
+
+<h1>my name is {{ name }} {{ lastname }} my mobaile no {{ mobileNo }}</h1>
+
+<button [disabled]="isbtn" (click)="handleButtonClick()">click me</button>
+<h1>this is change cntent {{ inputval }}</h1>
+<input type="text" [(ngModel)]="inputval" />
+
+<div>
+  @for(user of users; track user.name){
+  <h1>{{ user.name }}</h1>
+  }
+</div>
+<hr />
+<div *ngFor="let user of users">
+  <h1>{{ user.name }}</h1>
+</div>
+<div [style.color]="isError ? 'red' : 'green'">
+  This text will be red if isError is true, otherwise green.
+</div>
+
+<h1>{{ pageTitle | lowercase }}</h1>
+<h2>{{ a }} + {{ b }} = {{ sum() }}</h2>
+<h3>{{ sum() }} + 10 = {{ sumPlusTen() }}</h3>
+<img [src]="imageUrl" [attr.disabled]="disable ? true : null" />
