@@ -15,8 +15,8 @@ export class ItmeListComponent {
       name="pankaj"
       lastname = "jain"
       mobileNo = 9522189879
-      isbtn = false
-      inputval = "text"
+      isbtn = true
+      inputval = ""
 
      users = [
       {name:"pankaj",status:true},
@@ -47,6 +47,7 @@ export class ItmeListComponent {
 
   imageUrl: string = "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600";
 
+  
 
   isError: boolean = false;
 }

@@ -1,0 +1,63 @@
+<p>daytwo-component works!</p>
+
+<h1>
+  Toggle Background Color Directive: Create an Angular directive named
+  ToggleHighlightDirective. Implement a toggle functionality where clicking on
+  an element alternates its background color between two predefined colors red
+  and green. Use this directive in your main application component.
+</h1>
+
+<div appHighlight>Click me to toggle background color</div>
+<br />
+<hr />
+<br />
+<h2>
+  Conditional Display Directive: Develop an Angular directive called
+  ConditionalDisplayDirective. This directive should conditionally display or
+  hide an element based on a boolean input value. Apply this directive to a
+  button that, when clicked, toggles the visibility of a paragraph
+</h2>
+
+<button (click)="toggleVisibility()">Toggle Visibility</button>
+<br />
+<br />
+<p appConditonalhighlightDirective [isVisible]="isVisible">
+  This paragraph will be toggled
+</p>
+
+<br />
+<hr />
+<br />
+<h2>
+  You are tasked with creating a simple Angular component named products to
+  display a list of products. Each product has a name, price, and availability
+  status. Your goal is to use the *ngFor directive to iterate over the list of
+  products and display their details. Additionally, use the *ngIf directive to
+  conditionally display a message based on the availability status of each
+  product. Requirements: Create a Product class with the following properties:
+  name, price, and available In the productComponent ts filet, create an array
+  of Product objects and initialize it with sample data. Use the *ngFor
+  directive to loop over the products and display their details in a list. Use
+  the *ngIf directive to conditionally display a message indicating whether a
+  product is available or not. If a product is available, show a green
+  "Available" message; otherwise, display a red "Not Available" message..
+</h2>
+
+<br />
+
+<div>
+    <h2>Products</h2>
+
+    <input type="text" placeholder="Search by name" [(ngModel)]="searchTerm">
+    
+    <ul>
+      <li *ngFor="let product of filterProducts()">
+        <strong>{{ product.name }}</strong> - ${{ product.price }}
+        <span *ngIf="product.available; else notAvailable" style="color: green;">Available</span>
+        <ng-template #notAvailable><span style="color: red;">Not Available</span></ng-template>
+      </li>
+    </ul>
+</div>
+<br />
+<hr />
+<br />

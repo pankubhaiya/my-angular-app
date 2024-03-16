@@ -1,0 +1,32 @@
+/* styles.css */
+
+nav {
+    background-color: #86a6ad; /* Dark background color for the navbar */
+    padding: 10px; /* Add padding to the navbar */
+    display: flex; /* Make the navbar items flex items */
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+.logo img {
+    height: 50px; /* Set the height of the logo */
+}
+
+.nav-links {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Make the navigation links flex items */
+}
+
+.nav-links li {
+    margin-right: 20px; /* Add margin between navigation links */
+}
+
+.nav-links li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Set color of links to white */
+    font-weight: bold; /* Make the font bold */
+}
+.nav-links li a:active {
+    color: #da2929; /* Set color of links to white */
+    font-weight: bold; /* Make the font bold */
+}
