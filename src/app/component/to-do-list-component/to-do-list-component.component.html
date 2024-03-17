@@ -1,0 +1,23 @@
+<p>to-do-list-component works!</p>
+
+<h2>Add New Todo</h2>
+<form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm.value.title, todoForm.value.description)">
+  <label>Title:</label>
+  <input type="text" name="title" ngModel required>
+  <br>
+  <label>Description:</label>
+  <textarea name="description" ngModel required></textarea>
+  <br>
+  <button type="submit" [disabled]="!todoForm.valid">Add Todo</button>
+</form>
+
+<hr>
+<h2>Todo List</h2>
+<ul>
+    <li *ngFor="let todo of todos" [ngClass]="{'completed': todo.completed, 'incomplete': !todo.completed}">
+      <div>Title: {{ todo.title }}</div>
+      <div>Description: {{ todo.description }}</div>
+      <button *ngIf="todo.completed; else notAvailable" style="backgroundColor: green; color:white;">Completed</button>
+          <ng-template #notAvailable><button (click)="toggleCompletion(todo)" style="backgroundColor: red; color:white;">Incomplete</button></ng-template>
+    </li>
+  </ul>
