@@ -1,1 +1,20 @@
 <p>login-component works!</p>
+
+<!-- login.component.html -->
+<form (ngSubmit)="login(loginForm.value.email,loginForm.value.password)" #loginForm="ngForm">
+    <h2>Login</h2>
+    <div>
+      <label for="email" >Email:</label>
+      <input type="email" id="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required placeholder="Enter email" ngModel name="email" #email="ngModel" >
+      <p style="color: red;" [hidden]="email.valid || email.untouched">enter valid email</p>
+    </div>
+   
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter password"   ngModel name="password" #password="ngModel" required minlength="8">
+      <h6 style="color: red;" [hidden]="password.valid || password.untouched">enter valid password</h6>
+    </div>
+   
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+  

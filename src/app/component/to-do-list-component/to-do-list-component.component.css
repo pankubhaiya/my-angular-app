@@ -1,5 +1,63 @@
 /* todo.component.css */
 
+/* Style for the todo list */
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style for each todo item */
+  li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Style for completed todo items */
+  .completed {
+    background-color: lightgreen;
+  }
+  
+  /* Style for incomplete todo items */
+  .incomplete {
+    background-color: lightcoral;
+  }
+  
+  /* Style for the Add New Todo form */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  /* Style for buttons */
+  button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  /* Style for the submit button in the Add New Todo form */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Style for the buttons inside todo items */
+  button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Style for the buttons when hovered */
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* todo.component.css */
+
 /* Container for the todo list */
 .todo-container {
     max-width: 600px;
@@ -53,17 +111,8 @@
     padding: 15px;
     margin-bottom: 10px;
   }
-  
-  /* Style for completed todo items */
-  .completed {
-    background-color: lightgreen;
-  }
-  
-  /* Style for incomplete todo items */
-  .incomplete {
-    background-color: lightcoral;
-  }
-  
+
+
   /* Style for buttons inside todo items */
   .todo-item button {
     padding: 8px 15px;
@@ -78,4 +127,5 @@
   .todo-item button:hover {
     opacity: 0.8;
   }
+  
   
