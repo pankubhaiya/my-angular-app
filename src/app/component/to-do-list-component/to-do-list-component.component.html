@@ -1,23 +1,25 @@
 <p>to-do-list-component works!</p>
 
 <h2>Add New Todo</h2>
-<form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm.value.title, todoForm.value.description)">
+<form #todoForm="ngForm" (ngSubmit)="addOrUpdateTodo()">
   <label>Title:</label>
-  <input type="text" name="title" ngModel required>
+  <input type="text" name="title" [(ngModel)]="todoTitle" required>
   <br>
   <label>Description:</label>
-  <textarea name="description" ngModel required></textarea>
+  <textarea name="description" [(ngModel)]="todoDescription" required></textarea>
   <br>
-  <button type="submit" [disabled]="!todoForm.valid">Add Todo</button>
+  <button type="submit">{{ isUpdateMode ? 'Update' : 'Add Todo' }}</button>
 </form>
 
 <hr>
 <h2>Todo List</h2>
 <ul>
-    <li *ngFor="let todo of todos" [ngClass]="{'completed': todo.completed, 'incomplete': !todo.completed}">
-      <div>Title: {{ todo.title }}</div>
-      <div>Description: {{ todo.description }}</div>
-      <button *ngIf="todo.completed; else notAvailable" style="backgroundColor: green; color:white;">Completed</button>
-          <ng-template #notAvailable><button (click)="toggleCompletion(todo)" style="backgroundColor: red; color:white;">Incomplete</button></ng-template>
-    </li>
-  </ul>
+  <li *ngFor="let todo of todos" [ngClass]="{'completed': todo.completed, 'incomplete': !todo.completed}">
+    <div>Title: {{ todo.title }}</div>
+    <div>Description: {{ todo.description }}</div>
+    <button *ngIf="todo.completed; else notAvailable" style="backgroundColor: green; color:white;">Completed</button>
+    <ng-template #notAvailable><button (click)="toggleCompletion(todo)" style="backgroundColor: red; color:white;">Incomplete</button></ng-template>
+    <button (click)="setUpdateMode(todo)">Update</button>
+    <button (click)="deleteTodo(todo.id)">Delete</button> 
+  </li>
+</ul>
