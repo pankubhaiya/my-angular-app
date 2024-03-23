@@ -1,19 +1,20 @@
-
 <div>
-    <nav>
-        <div class="logo">
-            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a routerLink="/"  routerLinkActive="active" >Home</a></li>
-            <li><a routerLink="/dayone"  routerLinkActive="active" >day-1</a></li>
-            <li><a routerLink="/daytwo"  routerLinkActive="active" >day-2</a></li>
-            <li><a  routerLink="/login"  routerLinkActive="active" >Login</a></li>
-            <li><a routerLink="/Signup"  routerLinkActive="active" >Signup</a></li>
-            <li><a  routerLink="/todo">Todo-list</a></li>
-        </ul>
-    </nav>
-
+  <nav>
+    <div class="logo">
+      <img
+        src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Logo"
+      />
+    </div>
+    <ul class="nav-links">
+      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      @if(authservice.isAuthticate()){
+          <li><a routerLink="/todo">Todo-list</a></li>
+          <li (click)="authservice.logOut()"><a>Logout</a></li>
+      }@else{
+        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/Signup" routerLinkActive="active">Signup</a></li>
+      }
+    </ul>
+  </nav>
 </div>
-
-
