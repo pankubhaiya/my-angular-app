@@ -1,6 +1,6 @@
 <p>itme-list works!</p>
 
-<h1>my name is {{ name }} {{ lastname }} my mobaile no {{ mobileNo }}</h1>
+<h1>my name is {{ name }} {{ lastname }} my mobaile no {{ mobileNo | countryCode}}</h1>
 
 <button [disabled]="isbtn" (click)="handleButtonClick()">click me</button>
 <h1>this is change cntent {{ inputval }}</h1>
@@ -8,7 +8,7 @@
 
 <div>
   @for(user of users; track user.name){
-  <h1>{{ user.name }}</h1>
+  <h1>{{ user.name | uppercase }}</h1>
   }
 </div>
 <hr />

@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { HtmlParser } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CountryCodePipe } from '../pipes/country-code.pipe';
 
 @Component({
   selector: 'app-itme-list',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,CountryCodePipe],
   templateUrl: './itme-list.component.html',
   styleUrl: './itme-list.component.css'
 })
